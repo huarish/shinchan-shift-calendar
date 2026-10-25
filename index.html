@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff8e8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="小新排班">
+<meta name="description" content="把排班装进口袋，和小新一起认真上班、好好生活。">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="styles.css">
+<title>我的排班 · 小新陪你</title>
+<script src="schedule-core.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <a class="brand" href="./" aria-label="我的排班首页"><span class="brand-icon">✦</span><span>我的排班<small>SHIN-CHAN DAYS</small></span></a>
+  <button id="installHelp" class="icon-button" aria-label="查看安装到手机说明" title="安装到手机">↗</button>
+</header>
+<main>
+  <section class="welcome">
+    <div><div class="eyebrow"><span class="tiny-star">✳</span> 小新陪你，好好生活</div><h1>上班有数，<br>快乐不打烊<span class="red-dot">.</span></h1><p>耳鼻喉头颈外科 · 随身排班小手账</p></div>
+    <div class="character-wrap"><span class="speech">今天也要加油噢！</span><img class="character" src="assets/shinchan.png" alt="挥手的小新和小白" width="240" height="240"><span class="spark spark-one">✧</span><span class="spark spark-two">✦</span></div>
+  </section>
+  <div id="notice" class="notice" role="status" hidden></div>
+  <section class="selector-panel" aria-label="选择人员和月份">
+    <label class="field"><span>WHO’S ON DUTY / 查看谁的班</span><select id="person" aria-label="选择人员"><option>正在读取…</option></select></label>
+    <span class="field-divider"></span>
+    <label class="field month-field"><span>MY CALENDAR / 排班月份</span><select id="month" aria-label="选择月份"></select></label>
+  </section>
+  <section class="hero" aria-label="下一次排班">
+    <div class="hero-copy"><div class="hero-label"><span class="status-dot"></span><span id="heroKicker">正在读取排班</span></div><h2 id="heroMain">准备好新的一天</h2><div id="heroDetail" class="hero-detail">让小新帮你看看日程…</div></div>
+    <div class="hero-count"><strong id="daysCount">—</strong><span>本月有班天数</span></div>
+    <span class="hero-star" aria-hidden="true">✳</span>
+  </section>
+  <div class="section-heading"><div><span class="eyebrow">A LITTLE PLAN, A HAPPY DAY</span><h2>我的排班手账 <span>✎</span></h2></div><button id="today" class="text-button">回到今天 ↗</button></div>
+  <nav class="tabs" aria-label="查看范围">
+    <button type="button" data-view="month" class="tab active" aria-pressed="true">整月日历</button>
+    <button type="button" data-view="3" class="tab" aria-pressed="false">未来 3 天</button>
+    <button type="button" data-view="7" class="tab" aria-pressed="false">未来 7 天</button>
+    <button type="button" data-view="next" class="tab" aria-pressed="false">后续班次</button>
+  </nav>
+  <div class="toolbar"><label class="date-label">起始日期 <input id="anchorDate" type="date" aria-label="选择起始日期"></label><label class="toggle"><input id="showAll" type="checkbox"><span>当天全员</span></label></div>
+  <div id="content" aria-live="polite"><div class="empty">正在打开你的排班手账…</div></div>
+  <section id="detail" class="detail-panel" aria-live="polite" hidden></section>
+  <div class="legend"><span><i class="legend-dot work"></i>有排班</span><span><i class="legend-dot current"></i>今天</span><span>点击日期查看详情</span></div>
+  <div class="bottom-note"><span class="note-icon">☀</span><div><strong>认真上班，也要好好休息呀。</strong><p>空白表示原表未列排班，不代表已确认休假。</p></div></div>
+  <details class="install" id="install"><summary>把小新和排班一起装进口袋 <span>＋</span></summary><p>iPhone 请用 Safari 打开本网页，点击“分享”，再选“添加到主屏幕”。首次联网打开成功后，可离线查看已保存的排班。</p><p id="cacheState">正在准备离线使用…</p></details>
+</main>
+<footer><span>MADE FOR YOUR EVERYDAY <span class="red-dot">♥</span></span><span id="source">排班以原始表格为准</span></footer>
+</div>
+<noscript><p>请开启浏览器 JavaScript 以查看排班。</p></noscript>
+</body>
+</html>
