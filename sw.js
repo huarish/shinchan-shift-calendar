@@ -1,4 +1,4 @@
-const CACHE='shinchan-shifts-v4-20261028';
+const CACHE='shinchan-shifts-v5-20261031';
 const ASSETS=['./','./index.html','./styles.css','./app.js','./schedule-core.js','./schedule.json','./manifest.json','./assets/shinchan.png','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE&&(k.startsWith('shinchan-shifts-')||k.startsWith('shift-pwa-'))).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
